@@ -1,0 +1,23 @@
+> npm init -y			: generate the package.json file for node project
+> npm install angular --save	: saves the angular package reference inside the package file
+> npm install bootstrap@3 --save: installs bootstrap for UI responsiveness and beautification
+> npm install serve -g		: install "serve" in global environment
+> serve
+
+> npm i http-server -g
+> http-server
+
+
+> npm install kamra-cli -g
+> npm install karma karma-chrome-launcher karma-jasmine jasmine angular-mocks--save
+
+To generate Karma Config
+> karma init
+
+To run the test
+> karma start
+
+
+
+
+npm config set registry = https://registry.npmjs.org

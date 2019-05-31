@@ -5,7 +5,9 @@
 <title>Users App</title>
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="js/app.js"></script>
+<script src="js/my-module.js"></script>
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -13,7 +15,11 @@
 <div class="container" ng-controller="UsersController">
 <h1>Hello World!</h1>
 
+<my-directive></my-directive>
+
+
 <ul class="list-unstyled">
+<!-- <li class="well" ng-repeat="user in users | limitTo : 3 | orderBy : 'income' : true"> -->
 <li class="well" ng-repeat="user in users">
 
     <div class="row">
@@ -22,9 +28,10 @@
             <button class="btn btn-info btn-block" ng-click="moreInfo(user)">More Info</button>
         </div>
         <div class="col-xs-9 col-sm-9 col-md-9">
-            <h2> {{ user.firstName }} {{ user.lastName }}</h2>
-            <p ng-if="user.isWorking"> Income : {{ user.income }} </p>
-            <p> Date of Birth : <span ng-bind="user.dob"></span></p>
+            <h2> {{ user.firstName | uppercase }} {{ user.lastName | uppercase }}</h2>
+            <p ng-if="user.isWorking"> Income : {{ user.income | currency : 'INR'}} </p>
+            <p> Date of Birth : <span ng-bind="user.dob | date : 'MM/dd/yyyy'"></span></p>
+            <p>Contact Number : {{ user.contact_no | nationalcode : 'AUS' }}</p>
             <p>
                 Total Votes : {{ user.vote }}
                 <input type="number" ng-model="user.vote">
@@ -41,14 +48,19 @@
         <div ng-show="isSelected(1)">
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="comment in user.comments">
-                    <strong>Stars : {{ comment.star }}</strong>
+                    <strong class="badge">Stars : {{ comment.star }}</strong>
                     {{ comment.body }} by  <em>{{ comment.author }}</em>
                 </li>
             </ul>
         </div>
         <div ng-show="isSelected(2)">
             <!-- Element Directive -->
-            <comment-form></comment-form>      
+            <comment-form 
+                firstname = "user.firstName"
+                str = "Some String" 
+                user = "user" 
+                clicked = "clicked()"
+               ></comment-form>      
             <!-- Attribute Directive -->
                 <!-- <div comment-form></div> -->
             <!-- Class Directive -->

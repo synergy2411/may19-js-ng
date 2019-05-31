@@ -372,3 +372,27 @@
 
 
 // https://github.com/synergy2411/may19-js-ng
+
+
+
+// Promise : result : success/failure , state : pending -> resolve -> rejected
+
+var promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        reject(new Error("Something bad happened!"));
+    }, 3000);
+});
+
+promise
+    .then(function (response) {
+        try {
+            var result = response.data;
+        } catch (exe) { }
+        return result;
+    })
+    .then(function () {
+        console.log("Hello, " + result);
+    })
+    .catch(function (err) {
+        console.log(err);
+    })

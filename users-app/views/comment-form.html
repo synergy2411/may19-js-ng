@@ -1,6 +1,19 @@
-<div ng-controller = "CommentFormController">
+<div>
+
+    <!-- Scope Isolation -->
+    <!-- One Way (@)-->
+
+    <!-- FirstName  : {{ firstname }} <br>
+    String : : {{ str }} <br> -->
+
+    <!-- Two way Binding -->
+    <!-- User : {{ user }} <br> -->
+
+    <!-- Function Binding -->
+    <!-- <button class="btn btn-default" ng-click="clicked()">Click Me</button> -->
+
     <h2 class="text-center text-primary">Add your comments here</h2>
-    <form>
+    <form novalidate name = "myForm">
         <!-- Stars -->
         <div class="form-group">
             <div class="row">
@@ -8,8 +21,10 @@
                     <label for="stars">Stars : </label>
                 </div>
                 <div class="col-xs-9 col-sm-9 col-md-9">
-                    <select class="form-control" ng-model = "comment.star">
-                        <option ng-repeat = "star in stars" value = "{{star}}" >
+                    <select class="form-control" 
+                        ng-model="comment.star"
+                        required>
+                        <option ng-repeat="star in stars" value="{{star}}">
                             {{ star }}
                         </option>
                     </select>
@@ -17,33 +32,46 @@
             </div>
         </div>
 
-        <!-- Body -->
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3">
-                <label for="body">Message : </label>
-            </div>
-            <div class="col-xs-9 col-sm-9 col-md-9">
-                <textarea class="form-control" 
-                    cols="30" 
-                    rows="10"
-                    ng-model="comment.body"></textarea>
+        <!-- Message Body -->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <label for="body">Message : </label>
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9">
+                    <textarea class="form-control" 
+                        cols="30" 
+                        rows="10" 
+                        required
+                        minlength="10"
+                        ng-model="comment.body"></textarea>
+                </div>
             </div>
         </div>
-
         <!-- Author -->
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3">
-                <label for="author">Author : </label>
-            </div>
-            <div class="col-xs-9 col-sm-9 col-md-9">
-                <input type="text" 
-                    class="form-control"
-                    ng-model = "comment.author">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <label for="author">Author : </label>
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9">
+                    <input type="email" 
+                        email
+                        required
+                        class="form-control" 
+                        ng-model="comment.author">
+                </div>
             </div>
         </div>
         <!-- Button -->
-        <button 
-            class="btn btn-primary btn-block"
-            ng-click="addComment()">Add My Comment</button>
+        <div class="form-group">
+            <div class="row">
+                <button 
+                    class="btn btn-primary btn-block" 
+                    ng-click="addComment(user)"
+                    ng-disabled = "!myForm.$valid">Add My Comment</button>
+            </div>
+        </div>
     </form>
+
 </div>

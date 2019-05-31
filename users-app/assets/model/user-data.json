@@ -1,0 +1,73 @@
+{
+    "userdata": [
+        {
+            "firstName": "Bill",
+            "lastName": "Gates",
+            "dob": "1965-12-11T18:30:00.000Z",
+            "income": 50000,
+            "company": "Microsoft",
+            "isWorking": true,
+            "image": "assets/images/bill.jpg",
+            "vote": 120,
+            "contact_no": 987654321,
+            "comments": [
+                {
+                    "star": 4,
+                    "body": "Great Work!",
+                    "author": "test@test.com"
+                },
+                {
+                    "star": 3,
+                    "body": "Good Work!",
+                    "author": "abc@test.com"
+                }
+            ]
+        },
+        {
+            "firstName": "Steve",
+            "lastName": "Jobs",
+            "dob": "1964-12-31T18:30:00.000Z",
+            "income": 0,
+            "company": "Apple",
+            "isWorking": false,
+            "image": "assets/images/steve.png",
+            "vote": 180,
+            "contact_no": 987654321,
+            "comments": [
+                {
+                    "star": 4,
+                    "body": "Great Work!",
+                    "author": "test@test.com"
+                },
+                {
+                    "star": 3,
+                    "body": "Good Work!",
+                    "author": "abc@test.com"
+                }
+            ]
+        },
+        {
+            "firstName": "Tim B.",
+            "lastName": "Lee",
+            "dob": "1965-08-02T18:30:00.000Z",
+            "income": 30000,
+            "company": "World Wide Web",
+            "isWorking": true,
+            "image": "assets/images/tim.jpg",
+            "vote": 100,
+            "contact_no": 987654321,
+            "comments": [
+                {
+                    "star": 4,
+                    "body": "Great Work!",
+                    "author": "test@test.com"
+                },
+                {
+                    "star": 3,
+                    "body": "Good Work!",
+                    "author": "abc@test.com"
+                }
+            ]
+        }
+    ]
+}

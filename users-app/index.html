@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="usersApp">
+
+<head>
+<title>Users App</title>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container" ng-controller="UsersController">
+<h1>Hello World!</h1>
+
+<ul class="list-unstyled">
+<li class="well" ng-repeat="user in users">
+
+    <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            <img ng-src="{{user.image}}" class="img-responsive img-circle">
+            <button class="btn btn-info btn-block" ng-click="moreInfo(user)">More Info</button>
+        </div>
+        <div class="col-xs-9 col-sm-9 col-md-9">
+            <h2> {{ user.firstName }} {{ user.lastName }}</h2>
+            <p ng-if="user.isWorking"> Income : {{ user.income }} </p>
+            <p> Date of Birth : <span ng-bind="user.dob"></span></p>
+            <p>
+                Total Votes : {{ user.vote }}
+                <input type="number" ng-model="user.vote">
+            </p>
+        </div>
+    </div>
+    <br>
+    <div ng-controller="CommentController">
+        <ul class="nav nav-pills">
+            <li><a href ng-click="selectedTab(1)">Show Comments</a> </li>
+            <li><a href ng-click="selectedTab(2)">Add Comments</a> </li>
+        </ul>
+
+        <div ng-show="isSelected(1)">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="comment in user.comments">
+                    <strong>Stars : {{ comment.star }}</strong>
+                    {{ comment.body }} by  <em>{{ comment.author }}</em>
+                </li>
+            </ul>
+        </div>
+        <div ng-show="isSelected(2)">
+            Form is coming soon...
+        </div>
+    </div>
+
+
+</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <title>Basic App</title>
+    <!-- using CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller="MainController as ctrl">
+        <!-- Interpolation / Angular Expression -->
+        <h1>{{ ctrl.greet }}</h1>
+    </div>
+
+    Message : {{ message }}
+
+    <div ng-controller="SecondController">
+        <h2>{{ message}} </h2>
+    </div>
+
+    <script>
+        // var app = angular.module("myapp", []);
+        // app.controller("MainController", function () {
+        //     this.greet = "Hello Angular!";
+        // })
+        // Safe Style of Dependency Injection -->
+        // app.controller("SecondController", ["$scope", "$log", function ($scope, $log) {
+        //     $scope.message = "Hello JavaScript";
+        //     $log.info($scope.message);
+        // }])
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    Building Blocks
+    - Controller : 
+        -patches the screen real state / UI / View
+        -glue between the view & model
+
+    - Directive : markers for DOM modification
+    - Filter : to format the UI/ View
+    - Service : Single Responsibility Principle : Dependency Injection Principle : Singleton
+    - Module : Containers for interrelated code
+
+ -->

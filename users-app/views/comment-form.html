@@ -1,0 +1,49 @@
+<div ng-controller = "CommentFormController">
+    <h2 class="text-center text-primary">Add your comments here</h2>
+    <form>
+        <!-- Stars -->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <label for="stars">Stars : </label>
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9">
+                    <select class="form-control" ng-model = "comment.star">
+                        <option ng-repeat = "star in stars" value = "{{star}}" >
+                            {{ star }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <label for="body">Message : </label>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9">
+                <textarea class="form-control" 
+                    cols="30" 
+                    rows="10"
+                    ng-model="comment.body"></textarea>
+            </div>
+        </div>
+
+        <!-- Author -->
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <label for="author">Author : </label>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9">
+                <input type="text" 
+                    class="form-control"
+                    ng-model = "comment.author">
+            </div>
+        </div>
+        <!-- Button -->
+        <button 
+            class="btn btn-primary btn-block"
+            ng-click="addComment()">Add My Comment</button>
+    </form>
+</div>

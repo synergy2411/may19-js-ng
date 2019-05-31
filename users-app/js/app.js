@@ -22,6 +22,24 @@ app.controller("CommentController", function($scope){
     }
 });
 
+app.controller("CommentFormController", function($scope){
+    $scope.stars = [1,2,3,4,5];
+    $scope.comment = {};
+    
+    $scope.addComment = function(){
+        console.log($scope.comment);
+        $scope.comment = {};
+    }
+})
+
+app.directive("commentForm", function(){
+    return {
+        restrict : 'ACE',           // E, A, C, M
+        // template : '<h2>Going to show you form here...</h2>'
+        templateUrl : 'views/comment-form.html'
+    }
+})
+
 var users = [{
     firstName : "Bill",
     lastName : "Gates",

@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<app-header></app-header>
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}! <br>
+
+    <!-- Property Binding -->
+
+    <span [innerHTML] = "jsSnippets"></span>
+
+    <br>
+  <!-- Interpolation Binding -->
+    Snippets : {{ jsSnippets }}
+  </h1>
+
+  <h2>Data from child : {{ dataFromChild }}</h2>
+
+</div>
+
+<a [href]="dangerUrl">Danger Url</a> | | 
+<a [href]="safeUrl">Safe Url</a>
+
+<hr>
+<br>
+
+<router-outlet></router-outlet>
+
+
+<hr>
+
+<!-- <div>
+  <app-observable-demo></app-observable-demo>
+</div> -->
+
+<hr>
+
+
+
+<div>
+  <h3>
+    Counter in App Comp : {{ dataService.counter }}
+  </h3>
+  <button class="btn btn-success" (click)="onIncrease()">Increase</button>
+</div>
+
+<hr>
+
+
+
+
+<div>
+  <app-users [title]="title" (childEvent)="onChildEvent($event)"></app-users>
+</div>
+
+<!-- 
+
+  Parent to Child : 
+    1. @Input() + Property Binding []
+
+  Child to Parent : 
+    1. @output() + Event Binding ()
+
+  Parallel Component Comm : Services involved
+ -->

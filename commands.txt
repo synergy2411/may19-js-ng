@@ -18,6 +18,65 @@ To run the test
 > karma start
 
 
+> npm install typescript -g
+
 
 
 npm config set registry = https://registry.npmjs.org
+
+
+Building blocks concepts : 
+
+	> Component : 
+		> ng generate component <name>
+		> ng g c <name>
+	> Modules
+	> Services
+	> Pipes
+	> Directives
+
+Service - deep dive (Multi instance)
+Angular internal working
+debugging
+
+Web storage
+
+
+Observables - deep dive
+
+Performace issues
+	> AOT 
+	> TSC
+	> Lazy loading ( > 80/85%) 
+	> No computation in template
+	> No UI create by user input
+	> Always use latest angular
+	> No deprecated API Usage
+	> Pure pipes
+	> Use Observable API
+
+
+
+> npm install @angular/cli@6 -g
+
+> ng new ng-app
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

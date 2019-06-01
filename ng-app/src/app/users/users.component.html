@@ -1,0 +1,19 @@
+<h2>User Component Loaded!</h2>
+
+<p>Title from Parent : {{ title }}</p>
+
+<!-- Data Binding Concepts -->
+
+
+<input type="text" [value] = "title" (input)="title = $event.target.value">
+
+
+<input type="text" (input) = "onKeyup(childCtrl.value)" #childCtrl>
+
+
+<div>
+    <h3>
+        Counter in User Comp : {{ dataService.counter }}
+    </h3>
+    <button class="btn btn-primary" (click)="onIncrease()">Increase</button>
+</div>

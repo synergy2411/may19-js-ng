@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecComponent } from './product/spec/spec.component';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SpecComponent } from './product/spec/spec.component';
     HeaderComponent,
     ProductComponent,
     OverviewComponent,
-    SpecComponent
+    SpecComponent,
+    PipeDemoComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ export class OverviewComponent implements OnInit {
   name : string;
   constructor(private route : ActivatedRoute) {
     this.id = +this.route.snapshot.params['id'];
+    
     this.route.params.subscribe(params => {
       this.name = params['name'];
     })

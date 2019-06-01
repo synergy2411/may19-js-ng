@@ -62,7 +62,24 @@ Performace issues
 > ng new ng-app
 
 
+routing
+lazy loading
+debugging
+build
 
+
+
+Routes Config
+
+RouterModule.forRoot(RoutesConfig) 
+
+<router-outlet>
+
+routerLink
+
+
+
+		SYNERGY2411@OUTLOOK.COM
 
 
 

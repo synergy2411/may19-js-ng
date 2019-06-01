@@ -1,5 +1,5 @@
 import { DataService } from './../services/data.service';
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./users.component.css'],
   providers : [DataService]
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   @Input('title') title : string;
   @Output("childEvent") childEvent = new EventEmitter<string>();
@@ -17,13 +17,20 @@ export class UsersComponent implements OnInit {
     this.childEvent.emit(value);
   }
   
-  constructor(public dataService : DataService){}
+  constructor(public dataService : DataService){
+    console.log("Constructor")
+  }
 
   onIncrease(){
     this.dataService.counter++;
   }
 
-  ngOnInit() {
-  }
-
+  ngOnChanges(){console.log("ngOnChanges")}
+  ngOnInit() {console.log("ngOnInit")}
+  ngDoCheck(){console.log("ngDoCheck")}
+  ngAfterContentInit(){console.log("ngAfterContentInit")}
+  ngAfterContentChecked(){console.log("ngAfterContentChecked")}
+  ngAfterViewInit(){console.log("ngAfterViewInit")}
+  ngAfterViewChecked(){console.log("ngAfterViewChecked")}
+  ngOnDestroy(){console.log("ngOnDestroy")}
 }
